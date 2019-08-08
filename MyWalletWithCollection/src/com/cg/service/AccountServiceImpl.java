@@ -89,6 +89,7 @@ public class AccountServiceImpl implements Gst, Transaction {
 	 * */
 	@Override
 	public boolean addAccount(Account acc) throws InsufficientFundException{	
+		if(acc == null) return false;
 		if(acc.getBalance()<1000) {
 			throw new InsufficientFundException("The minimum balance must be 1000",acc.getBalance());
 		}else {
